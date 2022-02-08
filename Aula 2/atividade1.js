@@ -13,7 +13,9 @@ class StringManipulations {
      * @param  {String} subStr  substring to be matched
      * @return {String}
      */
-    findFirstMatch(subStr) {}
+    findFirstMatch(subStr) {
+        return subStr.indexOf(this.string)
+    }
 
 
     /**
@@ -21,7 +23,9 @@ class StringManipulations {
      * @param  {String} subStr  substring to be matched
      * @return {String}
      */
-    findLastMatch(subStr) {}
+    findLastMatch(subStr) {
+        return subStr.lastIndexOf(this.string)
+    }
 
     /**
      * Returns the fsubstring between two given other strings
@@ -29,7 +33,9 @@ class StringManipulations {
      * @param  {String} subStr2  ending of the match
      * @return {String}
      */
-    substringBetweenMatches(subStr1, subStr2) {}
+    substringBetweenMatches(subStr1, subStr2) {
+
+    }
 
     /**
     Given the string attribute of the class, 
@@ -40,7 +46,9 @@ class StringManipulations {
     * @return {String}
     */
     both_ends() {
+        if (this.string.length < 2) return " ";
 
+        return this.string[0] + this.string[this.string.length - 1]
     }
 
     /**
@@ -52,6 +60,17 @@ class StringManipulations {
     * @param  {String} str1  
     * @return {String}
     */
-    fix_start(str1) {}
+    fix_start(str1) {
+        const newString = [str1[0]]
+        for (let i = 1; i < str1.length; i++) {
+            if (str1[i] === str1[0]) 
+            {
+                newString.push("*")
+            } else {
+                newString.push(str1[i])
+            }
+        }
+        return newString.join()
+    }
 
 }
